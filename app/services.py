@@ -71,5 +71,4 @@ class PokemonService:
             dict: Pokemon data including name, image, and types
         """
         pokemon_id = random.randint(start, end)
-        # Linting error: invalid syntax
         return self.get_pokemon_by_id(pokemon_id)
