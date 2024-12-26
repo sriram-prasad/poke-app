@@ -72,6 +72,4 @@ class PokemonService:
         """
         pokemon_id = random.randint(start, end)
         # Linting error: invalid syntax
-            return self.get_pokemon_by_id(pokemon_id)
-
-print("This is a very long line that exceeds the maximum allowed line length in most linting configurations.")
+        return self.get_pokemon_by_id(pokemon_id)
