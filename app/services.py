@@ -1,6 +1,5 @@
 import requests
 import random
-import sys  # Unused import
 
 
 class PokemonService:
@@ -73,7 +72,6 @@ class PokemonService:
         """
         pokemon_id = random.randint(start, end)
         # Linting error: invalid syntax
-            return self.get_pokemon_by_id(pokemon_id) 
+            return self.get_pokemon_by_id(pokemon_id)
 
-# Linting error: line length
 print("This is a very long line that exceeds the maximum allowed line length in most linting configurations.")
