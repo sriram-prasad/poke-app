@@ -33,7 +33,7 @@ class TestPokemonService(unittest.TestCase):
             "name": "pikachu",
             "sprites": {"front_default": "image_url"},
             "types": [{"type": {"name": "electric"}}],
-            "ndex": "#0025",
+            "id": 25,
         }
         mock_get.return_value = mock_response
 
@@ -94,7 +94,7 @@ class TestPokemonService(unittest.TestCase):
             "name": "bulbasaur",
             "sprites": {"front_default": "image_url"},
             "types": [{"type": {"name": "grass"}}, {"type": {"name": "poison"}}],
-            "ndex": "#0001",
+            "id": 1,
         }
         mock_get.return_value = mock_response
 
