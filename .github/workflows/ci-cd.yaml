@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    name: Build and Lint
+    name: Build, Lint and Test
     runs-on: ubuntu-latest
 
     steps:
@@ -36,7 +36,7 @@ jobs:
         pip install ruff
         ruff check .
 
-    # Run Unit Tests with unittest
+    # 5. Run Unit Tests with unittest
     - name: Run Unit Tests
       run: |
         python -m unittest discover -s app/tests -p "*.py"
