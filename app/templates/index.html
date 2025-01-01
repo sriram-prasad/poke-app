@@ -29,6 +29,10 @@
             background-color: #0056b3;
             border-color: #004085;
         }
+        .pokemon-image {
+            width: 350px; /* Set the width to 500px */
+            height: auto; /* Maintain aspect ratio */
+        }
     </style>
 </head>
 <body class="bg-dark text-center">
@@ -36,7 +40,8 @@
         <h1>Random Pokémon Generator</h1>
         <hr>
         {% if pokemon.image %}
-            <img src="{{ pokemon.image }}" alt="{{ pokemon.name }}" class="img-fluid">
+            <!-- Add the class for setting the image size -->
+            <img src="{{ pokemon.image }}" alt="{{ pokemon.name }}" class="img-fluid pokemon-image">
         {% endif %}
         <h2>{{ pokemon.name }}</h2>
         <p>Type(s): {{ ", ".join(pokemon.types) }}</p>
