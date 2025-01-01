@@ -43,7 +43,7 @@
             <!-- Add the class for setting the image size -->
             <img src="{{ pokemon.image }}" alt="{{ pokemon.name }}" class="img-fluid pokemon-image">
         {% endif %}
-        <h2>{{ pokemon.name }}</h2>
+        <h2>{{ pokemon.name }} {{ pokemon.ndex }}</h2>
         <p>Type(s): {{ ", ".join(pokemon.types) }}</p>
         <a href="/" class="btn btn-primary">Get Another Pokémon</a>
     </div>

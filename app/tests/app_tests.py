@@ -33,6 +33,7 @@ class TestPokemonService(unittest.TestCase):
             "name": "pikachu",
             "sprites": {"front_default": "image_url"},
             "types": [{"type": {"name": "electric"}}],
+            "ndex": "#0025",
         }
         mock_get.return_value = mock_response
 
@@ -42,6 +43,7 @@ class TestPokemonService(unittest.TestCase):
         self.assertEqual(result["name"], "Pikachu")
         self.assertEqual(result["image"], "image_url")
         self.assertIn("Electric", result["types"])
+        self.assertEqual(result["ndex"], "#0025")
 
     @patch("app.services.requests.get")
     def test_get_pokemon_by_id_failure(self, mock_get):
@@ -92,6 +94,7 @@ class TestPokemonService(unittest.TestCase):
             "name": "bulbasaur",
             "sprites": {"front_default": "image_url"},
             "types": [{"type": {"name": "grass"}}, {"type": {"name": "poison"}}],
+            "ndex": "#0001",
         }
         mock_get.return_value = mock_response
 
@@ -102,3 +105,4 @@ class TestPokemonService(unittest.TestCase):
         self.assertEqual(result["image"], "image_url")
         self.assertIn("Grass", result["types"])
         self.assertIn("Poison", result["types"])
+        self.assertEqual(result["ndex"], "#0001")

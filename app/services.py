@@ -41,6 +41,7 @@ class PokemonService:
             "name": data["name"].capitalize(),
             "image": data["sprites"]["front_default"],
             "types": [t["type"]["name"].capitalize() for t in data["types"]],
+            "ndex": f"#{str(data['id']).zfill(4)}",
         }
 
     def get_pokemon_by_id(self, pokemon_id: int) -> dict:
