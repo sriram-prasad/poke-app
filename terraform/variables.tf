@@ -1,0 +1,19 @@
+variable "project_id" {
+  description = "The ID of the GCP project"
+  type        = string
+}
+
+variable "region" {
+  description = "The region to deploy resources"
+  type        = string
+}
+
+variable "repository_id" {
+  description = "The Artifact Registry repository ID"
+  type        = string
+}
+
+variable "image" {
+  description = "The container image URI for the Cloud Run service"
+  type        = string
+}
