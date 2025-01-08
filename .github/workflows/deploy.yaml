@@ -26,10 +26,8 @@ jobs:
 
     - name: Build and Push Docker Image
       run: |
-        IMAGE="australia-southeast2-docker.pkg.dev/rng-poke-app/poke-app-repo/poke-app:latest"
-        echo "IMAGE=$IMAGE" >> $GITHUB_ENV
-        docker build -t $IMAGE .
-        docker push $IMAGE
+        docker build -t australia-southeast2-docker.pkg.dev/rng-poke-app/poke-app-repo/poke-app:latest .
+        docker push australia-southeast2-docker.pkg.dev/rng-poke-app/poke-app-repo/poke-app:latest
 
   deploy:
     name: Deploy with Terraform
