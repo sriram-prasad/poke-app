@@ -30,6 +30,7 @@ jobs:
 
     - name: Build and Push Docker Image
       run: |
+        echo ${{ env.COMMIT_SHA }}
         docker build -t australia-southeast2-docker.pkg.dev/rng-poke-app/poke-app-repo/poke-app:${{ env.COMMIT_SHA }} .
         docker push australia-southeast2-docker.pkg.dev/rng-poke-app/poke-app-repo/poke-app:${{ env.COMMIT_SHA }}
 
@@ -63,7 +64,9 @@ jobs:
       run: terraform init
 
     - name: Terraform Plan
-      run: terraform plan -var "image_tag=${{ env.COMMIT_SHA }}"
+      run: |
+        echo ${{ env.COMMIT_SHA }}
+        terraform plan -var "image_tag=${{ env.COMMIT_SHA }}"
 
     - name: Terraform Apply
       run: terraform apply -var "image_tag=${{ env.COMMIT_SHA }}"
