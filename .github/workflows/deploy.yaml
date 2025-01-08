@@ -24,10 +24,14 @@ jobs:
       run: |
         gcloud auth configure-docker australia-southeast2-docker.pkg.dev
 
+    - name: Get Shortened Commit SHA
+      id: vars
+      run: echo "COMMIT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
     - name: Build and Push Docker Image
       run: |
-        docker build -t australia-southeast2-docker.pkg.dev/rng-poke-app/poke-app-repo/poke-app:latest .
-        docker push australia-southeast2-docker.pkg.dev/rng-poke-app/poke-app-repo/poke-app:latest
+        docker build -t australia-southeast2-docker.pkg.dev/rng-poke-app/poke-app-repo/poke-app:${{ env.COMMIT_SHA }} .
+        docker push australia-southeast2-docker.pkg.dev/rng-poke-app/poke-app-repo/poke-app:${{ env.COMMIT_SHA }}
 
   deploy:
     name: Deploy with Terraform
@@ -59,7 +63,7 @@ jobs:
       run: terraform init
 
     - name: Terraform Plan
-      run: terraform plan
+      run: terraform plan -var "image_tag=${{ env.COMMIT_SHA }}"
 
     - name: Terraform Apply
-      run: terraform apply
+      run: terraform apply -var "image_tag=${{ env.COMMIT_SHA }}"

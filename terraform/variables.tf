@@ -17,3 +17,8 @@ variable "image" {
   description = "The container image URI for the Cloud Run service"
   type        = string
 }
+
+variable "image_tag" {
+  description = "Tag for the Docker image in Artifact Registry"
+  type        = string
+}

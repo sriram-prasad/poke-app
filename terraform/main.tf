@@ -17,7 +17,6 @@ provider "google" {
   region  = var.region
 }
 
-
 # Artifact Registry Module
 module "artifact_registry" {
   source        = "./modules/artifact_registry"
@@ -29,5 +28,5 @@ module "artifact_registry" {
 module "cloud_run" {
   source = "./modules/cloud_run"
   region = var.region
-  image  = var.image
+  image  = "australia-southeast2-docker.pkg.dev/${var.project_id}/${var.repository_id}/poke-app:${var.image_tag}"
 }
