@@ -1,3 +1,6 @@
 .venv/
 app/__pycache__/
 app/tests/__pycache__/
+terraform/tf-credentials.json
+terraform/.terraform/
+terraform/.terraform.lock.hcl
