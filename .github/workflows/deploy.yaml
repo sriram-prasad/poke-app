@@ -38,7 +38,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./scripts
+        working-directory: ./terraform
 
     steps:
     - name: Checkout Code
