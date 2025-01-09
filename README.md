@@ -1,7 +1,7 @@
 # RNG Poke App
 
 ## Overview
-RNG Poke App is a web application designed to enhance the experience of generating and managing Pokémon data. The app stores Pokémon data in a PostgreSQL database, reducing the need for repeated API calls and improving performance. It also tracks analytics, such as the number of times a Pokémon has been generated, enabling insightful data-driven decisions.
+[RNG Poke App](https://poke-service-528760684336.australia-southeast2.run.app) is a web application designed to enhance the experience of generating and managing Pokémon data. The app stores Pokémon data in a PostgreSQL database, reducing the need for repeated API calls and improving performance. It also tracks analytics, such as the number of times a Pokémon has been generated, enabling insightful data-driven decisions.
 
 ## Features
 - **Pokémon Generation**: Dynamically generate random Pokémon and store the data.
