@@ -60,6 +60,10 @@ jobs:
     - name: Set Up Google Cloud SDK
       uses: google-github-actions/setup-gcloud@v2
 
+    - name: Get Shortened Commit SHA
+      id: vars
+      run: echo "COMMIT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
     - name: Terraform Init
       run: terraform init
 
