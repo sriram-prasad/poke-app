@@ -34,9 +34,22 @@
             height: auto; /* Maintain aspect ratio */
         }
         .github-link img {
-        width: 30px; /* Adjusted size */
-        height: 30px; /* Adjusted size */
-        margin-right: 5px;
+            width: 30px; /* Adjusted size */
+            height: 30px; /* Adjusted size */
+            margin-right: 5px;
+        }
+        .github-link {
+            position: fixed;
+            bottom: 20px; /* Distance from the bottom */
+            right: 20px; /* Distance from the right */
+            z-index: 1000; /* Ensure it stays on top */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+        }
+        .github-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
