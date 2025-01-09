@@ -10,3 +10,10 @@ resource "google_cloud_run_v2_service" "rng-poke-service" {
     }
   }
 }
+
+resource "google_cloud_run_service_iam_member" "allUsers" {
+  service  = var.service_name
+  location = var.region
+  role     = "roles/run.invoker"
+  member   = "allUsers"
+}
