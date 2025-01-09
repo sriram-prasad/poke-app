@@ -34,9 +34,22 @@
             height: auto; /* Maintain aspect ratio */
         }
         .github-link img {
-        width: 30px; /* Adjusted size */
-        height: 30px; /* Adjusted size */
-        margin-right: 5px;
+            width: 30px; /* Adjusted size */
+            height: 30px; /* Adjusted size */
+            margin-right: 5px;
+        }
+        .github-link {
+            position: fixed;
+            bottom: 20px; /* Distance from the bottom */
+            right: 20px; /* Distance from the right */
+            z-index: 1000; /* Ensure it stays on top */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+        }
+        .github-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -52,6 +65,10 @@
         <p>Type(s): {{ ", ".join(pokemon.types) }}</p>
         <a href="/" class="btn btn-primary">Get Another Pokémon</a>
     </div>
+    <!-- GitHub Link -->
+    <a href="https://github.com/sriram-prasad/poke-app" target="_blank" class="github-link">
+        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">View on GitHub
+    </a>
     <!-- GitHub Link -->
     <a href="https://github.com/sriram-prasad/poke-app" target="_blank" class="github-link">
         <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">View on GitHub
