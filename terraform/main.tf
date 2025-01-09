@@ -26,7 +26,8 @@ module "artifact_registry" {
 
 # Cloud Run Module
 module "cloud_run" {
-  source = "./modules/cloud_run"
-  region = var.region
-  image  = "australia-southeast2-docker.pkg.dev/${var.project_id}/${var.repository_id}/poke-app:${var.image_tag}"
+  source       = "./modules/cloud_run"
+  region       = var.region
+  image        = "australia-southeast2-docker.pkg.dev/${var.project_id}/${var.repository_id}/poke-app:${var.image_tag}"
+  service_name = var.service_name
 }

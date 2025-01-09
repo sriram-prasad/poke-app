@@ -8,3 +8,8 @@ variable "image" {
   type        = string
 
 }
+
+variable "service_name" {
+  description = "The name of the Cloud Run service"
+  type        = string
+}
