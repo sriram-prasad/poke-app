@@ -67,10 +67,12 @@ jobs:
     - name: Terraform Init
       run: terraform init
 
+    # Terraform Plan
     - name: Terraform Plan
       run: |
         echo ${{ env.COMMIT_SHA }}
         terraform plan -var "image_tag=${{ env.COMMIT_SHA }}"
 
+    # Terraform Apply with Auto-Approve
     - name: Terraform Apply
-      run: terraform apply -var "image_tag=${{ env.COMMIT_SHA }}"
+      run: terraform apply -var "image_tag=${{ env.COMMIT_SHA }}" -auto-approve
