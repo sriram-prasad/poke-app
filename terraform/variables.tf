@@ -13,7 +13,7 @@ variable "repository_id" {
   type        = string
 }
 
-variable "image" {
-  description = "The container image URI for the Cloud Run service"
+variable "image_tag" {
+  description = "Tag for the Docker image in Artifact Registry"
   type        = string
 }
